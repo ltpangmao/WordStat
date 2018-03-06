@@ -32,7 +32,7 @@ def idf_like(word, text_list):
 count = 0;
 text_file_list = []
 # obtain all files that end with ".docx"
-for filepath in glob.iglob("hw/*/*/*.docx"): # generator, search immediate subdirectories
+for filepath in glob.iglob("/Users/tongli/OneDrive/teaching/course/SE/2017-2018/作业/*/*/*/*.docx"): # generator, search immediate subdirectories
     count+=1
     document = Document(filepath)
     text = ''
@@ -73,7 +73,7 @@ useful_words_1 = ['学习','界面设计','框架','编程','编码',"软件开�
 useful_words_2 = ['讨论','界面','编写','系统','流程图','测试','数据','数据结构','代码','分析','模块','算法','程序','软件','需求',
                 '开发','实现','设计','功能']
 
-useful_words = useful_words_2
+useful_words = useful_words_1
 
 
 # sort the list
@@ -121,7 +121,7 @@ fontP.set_size(14)
 fig, ax = plt.subplots()
 ax.scatter(occurrence_list, idf_like_list,s =np_occurrence_list, c=color_list, alpha = 0.5)
 for i, txt in enumerate(useful_words):
-    ax.annotate(txt, (occurrence_list[i]-2,idf_like_list[i])-2)
+    ax.annotate(txt, (occurrence_list[i]-0.5, idf_like_list[i]))
 # Add axis labels
 ax.set_xlabel(xlab, fontproperties=fontP)
 ax.set_ylabel(ylab, fontproperties=fontP)
